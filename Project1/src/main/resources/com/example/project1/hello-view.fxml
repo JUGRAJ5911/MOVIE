@@ -1,0 +1,57 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.geometry.Insets?>
+<?import javafx.scene.chart.BarChart?>
+<?import javafx.scene.chart.CategoryAxis?>
+<?import javafx.scene.chart.NumberAxis?>
+<?import javafx.scene.control.Button?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.control.RadioButton?>
+<?import javafx.scene.control.TableColumn?>
+<?import javafx.scene.control.TableView?>
+<?import javafx.scene.control.ToggleGroup?>
+<?import javafx.scene.layout.HBox?>
+<?import javafx.scene.layout.Region?>
+<?import javafx.scene.layout.VBox?>
+<?import javafx.scene.text.Font?>
+
+<VBox alignment="CENTER" prefHeight="556.0" prefWidth="541.0" spacing="20.0" xmlns="http://javafx.com/javafx/22" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.example.project1.HelloController">
+    <padding>
+        <Insets bottom="20.0" left="20.0" right="20.0" top="20.0" />
+    </padding>
+    <children>
+      <Label id="heading1" text="Student Grades System">
+         <font>
+            <Font name="System Bold" size="20.0" />
+         </font>
+      </Label>
+      <TableView fx:id="tblview" prefHeight="300.0" prefWidth="200.0">
+        <columns>
+          <TableColumn fx:id="idColumn" prefWidth="136.0" text="ID" />
+          <TableColumn fx:id="nameColumn" prefWidth="114.0" text="Name" />
+            <TableColumn fx:id="subjectColumn" prefWidth="122.0" text="Subject" />
+            <TableColumn fx:id="gradeColumn" prefWidth="128.0" text="Grade" />
+        </columns>
+      </TableView>
+      <BarChart fx:id="barChart" title="Student Subject details" visible="false">
+        <xAxis>
+          <CategoryAxis fx:id="xAxis" side="BOTTOM" />
+        </xAxis>
+        <yAxis>
+          <NumberAxis fx:id="yAxis" side="LEFT" />
+        </yAxis>
+      </BarChart>
+
+        <HBox alignment="CENTER" spacing="10.0" fx:id="radioButtonHBox">
+            <RadioButton id="radiobtn1" mnemonicParsing="false" fx:id="btn1" selected="true" text="Age" textAlignment="CENTER">
+                <toggleGroup>
+                    <ToggleGroup fx:id="a1" />
+                </toggleGroup>
+            </RadioButton>
+            <RadioButton id="radiobtn2" mnemonicParsing="false" fx:id="btn2" text="Month" textAlignment="CENTER" toggleGroup="$a1" />
+            <RadioButton id="radiobtn3" mnemonicParsing="false" fx:id="btn3" text="Status" textAlignment="CENTER" toggleGroup="$a1" />
+            <Region HBox.hgrow="ALWAYS" />
+            <Button fx:id="toggleButton" mnemonicParsing="false" onAction="#onHelloButtonClick" text="View Table" visible="true"/>
+        </HBox>
+    </children>
+</VBox>

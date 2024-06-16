@@ -1,0 +1,9 @@
+.root{
+    -fx-background-color: skyblue;
+}
+#radiobtn{
+   -fx-text-fill:#fff;
+}
+#heading1{
+    -fx-text-fill:#333;
+}
